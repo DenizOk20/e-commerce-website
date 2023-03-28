@@ -1,8 +1,9 @@
-
+import Slider from "../Slider/Slider";
+import './Home.css'
 const Home = () => {
     return(
-        <div>
-                        
+        <div className="Home">
+                     
         </div>
     )
 }
