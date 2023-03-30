@@ -1,3 +1,4 @@
+import Category from './Categories/Category';
 import Navbar from './Navbar/Navbar'
 import Slider from './Slider/Slider';
 
@@ -6,6 +7,7 @@ const Layout = () => {
         <div>
             <Navbar/>
             <Slider/>
+            <Category/>
         </div>
     )
 }

@@ -20,6 +20,7 @@
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    transition: all 1.3s ease;
 }
 
 .slide.active{
