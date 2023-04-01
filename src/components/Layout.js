@@ -1,5 +1,6 @@
 import Category from './Categories/Category';
 import Navbar from './Navbar/Navbar'
+import Products from './Products/Products';
 import Slider from './Slider/Slider';
 
 const Layout = () => {
@@ -8,6 +9,7 @@ const Layout = () => {
             <Navbar/>
             <Slider/>
             <Category/>
+            <Products/>
         </div>
     )
 }
