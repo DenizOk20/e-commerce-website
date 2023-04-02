@@ -1,18 +1,18 @@
 .Products{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
+    margin-top: 20px;
 }
+
 
 .Product{
     width: 20%;
-    height: 75%;
+    height: 50%;
     position: relative;
-    display: block;
-    margin: 20px 24px 0 0;
+    margin: 10px;
     cursor: pointer;
 }
 
