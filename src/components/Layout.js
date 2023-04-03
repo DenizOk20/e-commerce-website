@@ -1,4 +1,5 @@
 import Category from './Categories/Category';
+import Footer from './Footer/Footer';
 import Navbar from './Navbar/Navbar'
 import NewsLetter from './NewsLetter/NewsLetter';
 import Products from './Products/Products';
@@ -12,6 +13,7 @@ const Layout = () => {
             <Category/>
             <Products/>
             <NewsLetter/>
+            <Footer/>
         </div>
     )
 }

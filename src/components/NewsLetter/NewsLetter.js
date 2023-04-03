@@ -8,7 +8,7 @@ const NewsLetter = () => {
             <h1 className='news-title'>NewsLetter</h1>
             <span className='news-desc'>Get timely updates from your favorite products</span>
             <button className='send-button'>
-            <input className='email-input' type='email' placeholder='Type your E-mail'/>
+                <input className='email-input' type='email' placeholder='Type your E-mail'/>
                 <FontAwesomeIcon className='send-icon' icon={faPaperPlane}/>
             </button>
         </div>
