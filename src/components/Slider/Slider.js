@@ -24,7 +24,7 @@ const Slider = () => {
             <Link className="slider-section">
                 <FontAwesomeIcon className="arrows left-arrow" icon={faArrowLeft} onClick={handlePrevClick} />
                     {SlideData.map((slide,index) => (
-                        <div key={index}className={`slide ${index === currentSlide ? 'active' : ''}`}>
+                        <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
                             <img alt={slide.title} src={require(`../../../public/Images/${slide.slideImg}`)}/>
                             <div className="slide-infos">
                                 <h1>{slide.slideInfo}</h1>
