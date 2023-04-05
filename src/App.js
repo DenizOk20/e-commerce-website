@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
 import ProductPage from './ProductPage';
-
+import SingleProduct from './components/SingleProduct/SingleProduct'
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route index element={<Layout/>}/>
           <Route path='/productlist' element={<ProductPage/>}/>
+          <Route path='/product' element={<SingleProduct/>}/>
         <Route/>
       </Routes>
     </div>

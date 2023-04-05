@@ -1,0 +1,34 @@
+.category-item{
+    flex: 1;
+    margin: 3px;
+    height: 70vh;
+    position: relative;
+}
+.category-section{
+    padding: 0;
+    margin: 0;
+}
+
+.category-img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.category-img:hover{
+    opacity: 0.9;
+}
+
+.category-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    font-weight: 600;
+    font-family:monospace,sans-serif;
+    z-index: 1;
+}
