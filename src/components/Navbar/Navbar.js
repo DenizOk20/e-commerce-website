@@ -16,8 +16,8 @@ const Navbar = () => {
                     <button className="search-button">Search</button>
                 </div>
                 <div className="in-out">
-                    <Link className="log-in">Log in</Link>
-                    <Link className="Register">Register</Link>
+                    <Link to="/login" className="log-in">Log in</Link>
+                    <Link to="/register" className="Register">Register</Link>
                 </div>
             </nav>
         </div>

@@ -3,10 +3,10 @@ import Navbar from "../Navbar/Navbar"
 import NewsLetter from '../NewsLetter/NewsLetter'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAdd, faMinus, faRemove } from '@fortawesome/free-solid-svg-icons'
+import { faAdd, faMinus} from '@fortawesome/free-solid-svg-icons'
 
 const SingleProduct = () => {
-
+    
     return(
         <div>
             <Navbar/>
