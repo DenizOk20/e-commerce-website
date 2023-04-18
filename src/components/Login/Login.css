@@ -34,6 +34,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 35%;
 }
 
 .info-form > input{
@@ -41,6 +42,7 @@
     padding: 10px;
     min-width: 40%;
     border: none;
+    width: 100%;
 }
 
 .info-form > input:focus{
@@ -51,7 +53,7 @@
     font-size: 12px;
     margin: 10px 0;
     display: flex;
-    width: 30%;
+    width: 35%;
     text-align: left;
 }
 
@@ -62,5 +64,5 @@
     cursor: pointer;
     font-size: 1rem;
     color: #fff;
-    opacity: 0.7;
+    opacity: 0.9;
 }
