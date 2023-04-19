@@ -33,3 +33,8 @@
     font-family:monospace,sans-serif;
     z-index: 1;
 }
+@media only screen and (max-width:400px){
+    .category-item{
+        height: 30vh;
+    }
+}

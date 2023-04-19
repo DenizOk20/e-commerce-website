@@ -1,3 +1,7 @@
+.footer-container{
+    display: flex;
+}
+
 .footer{
     display: flex;
     width: 100%;
@@ -107,27 +111,17 @@
 
 .contact-info{
     display: flex;
+    flex-direction: column;
+    text-align: left;
     margin-right: 4px;
 }
 
 .contact-icons{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-}
-
-.contact-text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 8px;
-}
-
-.contact-text > p{
     width: 100%;
 }
+
 
 .credit-cards{
     display: flex;
@@ -139,4 +133,60 @@
 .credit-cards > i{
     font-size: 1.8rem;
     margin-right: 10px;
+}
+
+
+@media only screen and (max-width:400px) {
+    .footer-container{
+        height: 80vh;
+        margin-top: 10px;
+    }
+    .footer{
+        flex-direction: column;
+    }
+
+    .company-name{
+        font-size: 18px;
+    }
+    .company-desc{
+        font-size: 13px;
+    }
+    .social-info{
+        font-size: 18px;        
+    }
+
+    .social-media-icons> svg{
+        font-size: 20px;
+    }
+    .site-links{
+        font-size: 18px;
+        width: 100%;
+        text-align: center;   
+    }
+    .links{
+        flex-direction: initial;
+        width: 100%;
+    }
+    .link{
+        text-align: center;
+        width: 20%;
+    }
+    .link > a{
+        font-size: 13px;
+        text-align: center;
+    }
+    .right-side{
+        flex: 4;
+        justify-content: start;
+    }
+    .contact{
+        font-size: 18px;
+    }
+    .credit-cards> svg {
+        font-size: 24px;
+    }
+    .contact-icons > p{
+        margin-left: 10px;
+        font-size: 12px;
+    }
 }

@@ -99,3 +99,25 @@
     width: 50%;
     text-align: center;
 }
+
+@media only screen and (max-width:400px){
+    .Slider{
+        height: 40vh;
+    }
+    
+    .slide-img{padding: 5px;}
+
+    .slide-infos{
+        padding: 10px;
+    }
+    .slide-infos > h1{
+        font-size: 20px;
+        width: 100%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+    .slide-infos > p{
+        font-size: 14px;
+        width: 80%;
+    }
+}

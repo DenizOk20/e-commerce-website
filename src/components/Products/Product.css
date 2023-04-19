@@ -48,3 +48,13 @@
     transition: all 0.8s ease;
     opacity: 1;
 }
+
+@media only screen and (max-width:400px){
+    .Product{
+        height: 40vh;
+        min-height: 200px;
+    }
+    .icons{
+        opacity: 1;
+    }
+}

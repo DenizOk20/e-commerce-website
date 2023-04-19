@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faSearch} from "@fortawesome/free-solid-svg-icons"
+import {faSearch, faShoppingBag} from "@fortawesome/free-solid-svg-icons"
 import './Navbar.css'
 
 const Navbar = () => {
@@ -18,6 +18,7 @@ const Navbar = () => {
                 <div className="in-out">
                     <Link to="/login" className="log-in">Log in</Link>
                     <Link to="/register" className="Register">Register</Link>
+                    <Link to="/cart" className="shop-bag-icon"><FontAwesomeIcon icon={faShoppingBag}/></Link>
                 </div>
             </nav>
         </div>

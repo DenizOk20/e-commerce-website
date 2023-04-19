@@ -4,5 +4,12 @@
     justify-content: space-between;
 }
 
+@media only screen and (max-width:400px) {
+    .Category{
+        padding: 10px;
+        flex-direction: column;
+        display: block;
+    }
+}
 
 

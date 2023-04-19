@@ -61,3 +61,13 @@
     color: #fff;
     opacity: 0.9;
 }
+
+@media only screen and (max-width:420px) {
+    .register-container{
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+    .register-section{
+        width: 70%;
+    }
+}
