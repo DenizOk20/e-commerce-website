@@ -12,22 +12,20 @@ const Products = ({cat,filters,sort}) => {
     useEffect(() => {
         const getProducts = async () => {
             try{
-                const res = await axios.get(cat
-                     ? `http://localhost:5000/api/products?category=${cat}` 
+                const res = await axios.get(
+                    cat ? `http://localhost:5000/api/products?category=${cat}` 
                      : 'http://localhost:5000/api/products');
                 setProducts(res.data)
             }
-            catch(err){
-
-            }
+            catch(err){}
         };
         getProducts()
     },[cat])
 
     useEffect(() => {
         cat && setFilteredProducts(
-            products.filter(item => Object.entries(filters).every(
-                ([key,value]) => item[key].includes(value)
+            products.filter(item => Object.entries(filters).every(([key,value]) =>
+             item[key].includes(value)
             ))
         );
     },[products,cat,filters])
@@ -52,10 +50,8 @@ const Products = ({cat,filters,sort}) => {
 
     return(
         <div className='Products'>
-            {cat
-                ? filteredProducts.map((item) => (<Product item={item} key={item.id}/>))
-                : FavoriteProducts.slice(0,8).map((item) => (<Product item={item} key={item.id}/>))
-        }
+        {cat ? filteredProducts.map((item) => <Product item={item} key={item.id}/>)
+            : products.slice(0,8).map((item) => <Product item={item} key={item.id}/>)}
         </div>
     )
 }

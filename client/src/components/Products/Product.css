@@ -33,6 +33,7 @@
     margin: 3px;
     padding: 8px;
     transition: all 0.5s ease;
+    color: #000000;
 }
 
 .icon:hover{

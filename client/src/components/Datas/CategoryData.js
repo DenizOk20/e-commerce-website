@@ -3,7 +3,7 @@ export default [
         id: "1",
         title: "SHIRTS STYLE",
         image: "https://images.pexels.com/photos/2897531/pexels-photo-2897531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        cat: "T-shirt"
+        cat: "t-shirt"
     },
     {
         id:"2",
