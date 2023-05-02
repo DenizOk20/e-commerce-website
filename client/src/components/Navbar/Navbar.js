@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faSearch, faShoppingBag} from "@fortawesome/free-solid-svg-icons"
 import './Navbar.css'
+import {useSelector} from 'react-redux'
 
 const Navbar = () => {
+    const quantity = useSelector(state => state.cart.quantity)
+    console.log(quantity)
     return(
         <div className="Navbar">
             <nav>
@@ -18,7 +21,10 @@ const Navbar = () => {
                 <div className="in-out">
                     <Link to="/login" className="log-in">Log in</Link>
                     <Link to="/register" className="Register">Register</Link>
-                    <Link to="/cart" className="shop-bag-icon"><FontAwesomeIcon icon={faShoppingBag}/></Link>
+                    <Link to="/cart" className="shop-bag-icon">
+                        <FontAwesomeIcon icon={faShoppingBag}/>
+                        <span>{quantity}</span>
+                    </Link>
                 </div>
             </nav>
         </div>

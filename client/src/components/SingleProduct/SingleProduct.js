@@ -7,6 +7,8 @@ import { faAdd, faMinus} from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { publicRequest } from '../../requestMethods'
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from 'react-redux'
 
 const SingleProduct = () => {
     const location = useLocation();
@@ -16,6 +18,7 @@ const SingleProduct = () => {
     const [quantity,setQuantitiy] = useState(1);
     const [color,setColor] = useState(null);
     const [size,setSize] = useState(null);
+    const dispacth = useDispatch();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -38,7 +41,9 @@ const SingleProduct = () => {
     }
 
     const handleClick = () => {
-        // update cart
+        dispacth(
+            addProduct({...product, quantity, color, size})
+        );
     }
 
     return(

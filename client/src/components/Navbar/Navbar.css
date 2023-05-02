@@ -89,6 +89,27 @@ nav{
     margin-right: 10px;
     padding: 4px;
     color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.shop-bag-icon{
+    position: relative;
+}
+
+.shop-bag-icon i{
+    font-size: 1.2rem;
+}
+.shop-bag-icon span{
+    position: absolute;
+    top: -6px;
+    right: -10px; 
+    background-color: #19A7CE;
+    padding: 2px;
+    border-radius: 50%;
+    width: 14px;
+    display: flex;
+    justify-content: center;
 }
 
 @media only screen and (max-width: 400px) {
