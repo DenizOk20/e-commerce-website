@@ -43,7 +43,12 @@
 .bottom-cart{
     display: flex;
     justify-content: space-between;
+}
 
+.bc-all{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
 }
 
 .cart-info{
@@ -79,6 +84,11 @@ hr{
     justify-content: space-around;
     padding: 20px;
 }
+/* .cart-color-detail{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+} */
 
 .price-detail{
     flex: 1;
@@ -87,6 +97,7 @@ hr{
     align-items: center;
     justify-content: center;
 }
+
 
 .price-amount-detail{
     display: flex;
