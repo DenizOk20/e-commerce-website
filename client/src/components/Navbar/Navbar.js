@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faSearch, faShoppingBag} from "@fortawesome/free-solid-svg-icons"
 import './Navbar.css'
 import {useSelector} from 'react-redux'
+import { loginSuccess } from "../../redux/userRedux";
 
 const Navbar = () => {
     const quantity = useSelector(state => state.cart.quantity)
@@ -19,7 +20,10 @@ const Navbar = () => {
                     <button className="search-button">Search</button>
                 </div>
                 <div className="in-out">
-                    <Link to="/login" className="log-in">Log in</Link>
+                    {loginSuccess === true 
+                    ? <Link to="/login" className="log-in">Log in</Link> 
+                    : <Link to="/" className="log-in">Log out</Link>
+                    }
                     <Link to="/register" className="Register">Register</Link>
                     <Link to="/cart" className="shop-bag-icon">
                         <FontAwesomeIcon icon={faShoppingBag}/>
