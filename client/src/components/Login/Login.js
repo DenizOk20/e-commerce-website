@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import { login } from '../../redux/apiCalls'
+import { Logout, login } from '../../redux/apiCalls'
 import { loginSuccess } from '../../redux/userRedux'
 
 const Login = () => {
@@ -22,6 +22,7 @@ const Login = () => {
             navigate('/register')
         }
     }
+
 
     return(
         <div className='login-container'>

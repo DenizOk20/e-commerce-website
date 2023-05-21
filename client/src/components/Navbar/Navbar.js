@@ -2,12 +2,19 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faSearch, faShoppingBag} from "@fortawesome/free-solid-svg-icons"
 import './Navbar.css'
-import {useSelector} from 'react-redux'
-import { loginSuccess } from "../../redux/userRedux";
+import {useDispatch, useSelector} from 'react-redux'
+import { loginSuccess, logout, logoutSuccess } from "../../redux/userRedux";
+import { Logout } from "../../redux/apiCalls";
 
 const Navbar = () => {
     const quantity = useSelector(state => state.cart.quantity)
     console.log(quantity)
+    const dispatch = useDispatch();
+    const currentUser = useSelector(state => state.user.currentUser);
+    const handleClick = (e) => {
+        dispatch(logoutSuccess());
+    }
+
     return(
         <div className="Navbar">
             <nav>
@@ -20,9 +27,9 @@ const Navbar = () => {
                     <button className="search-button">Search</button>
                 </div>
                 <div className="in-out">
-                    {loginSuccess === true 
-                    ? <Link to="/login" className="log-in">Log in</Link> 
-                    : <Link to="/" className="log-in">Log out</Link>
+                    {currentUser === null
+                    ? (<Link to="/login" className="log-in">Log in</Link> )
+                    : (<Link onClick={handleClick} to="/" className="log-in">Log out</Link>)
                     }
                     <Link to="/register" className="Register">Register</Link>
                     <Link to="/cart" className="shop-bag-icon">
