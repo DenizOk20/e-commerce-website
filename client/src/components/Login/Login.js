@@ -18,6 +18,9 @@ const Login = () => {
         if(loginSuccess()){
             navigate('/')
         }
+        else{
+            navigate('/register')
+        }
     }
 
     return(

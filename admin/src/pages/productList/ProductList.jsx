@@ -30,7 +30,7 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <div className="productListItem">
-            <img className="productListImg" src={params.row.img} alt="" />
+            <img className="productListImg" src={params.row.avatar} alt="" />
             {params.row.title}
           </div>
         );
@@ -69,7 +69,7 @@ export default function ProductList() {
         disableSelectionOnClick
         columns={columns}
         getRowId={(row) => row._id}
-        pageSize={8}
+        pageSize={10}
         checkboxSelection
       />
     </div>

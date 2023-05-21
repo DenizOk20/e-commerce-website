@@ -11,7 +11,7 @@ const Navbar = () => {
     return(
         <div className="Navbar">
             <nav>
-                <Link className="nav-header font-mono-m">Deniz Store</Link>
+                <Link to="/" className="nav-header font-mono-m">Deniz Store</Link>
                 <div className="nav-search">
                     <div className="input-section">
                         <input className="input" name="search" type={Text} placeholder="Search..."/>

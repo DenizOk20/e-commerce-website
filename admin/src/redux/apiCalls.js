@@ -1,4 +1,4 @@
-import { loginFailure, loginStart, loginSuccess } from "./userRedux"
+import { addUserFailure, addUserStart, addUserSuccess, deleteUserFailure, deleteUserStart, deleteUserSuccess, getUserFailure, getUserStart, getUserSuccess, loginFailure, loginStart, loginSuccess, updateUserFailure, updateUserStart, updateUserSuccess } from "./userRedux"
 import {publicRequest, userRequest} from '../requestMethods'
 import { addProductFailure, addProductSuccess, deleteProductFailure, deleteProductStart, deleteProductSuccess, getProductFailure, getProductStart, getProductSuccess, updateProductFailure, updateProductStart, updateProductSuccess } from "./productRedux";
 
@@ -49,10 +49,54 @@ export const updateProduct = async (id,product,dispatch) => {
 export const addProduct = async (product,dispatch) => {
     dispatch(addProductSuccess());
     try{
-        const res = await userRequest.post(`/products`, {product});
+        const res = await userRequest.post(`/products`, product);
         dispatch(addProductSuccess(res.data));
     }
     catch(err){
         dispatch(addProductFailure());
+    }
+};
+
+export const getUsers = async (dispatch) => {
+    dispatch(getUserStart());
+    try{
+        const res = await userRequest.get('/users');
+        dispatch(getUserSuccess(res.data));
+    }
+    catch(err){
+        dispatch(getUserFailure());
+    }
+};
+
+export const updateUser = async (dispatch) => {
+    dispatch(updateUserStart());
+    try{
+        const res = await publicRequest.get('/users');
+        dispatch(updateUserSuccess(res.data));
+    }
+    catch(err){
+        dispatch(updateUserFailure());
+    }
+};
+
+export const deleteUser = async (dispatch) => {
+    dispatch(deleteUserStart());
+    try{
+        const res = await publicRequest.delete('/users');
+        dispatch(deleteUserSuccess(res.data));
+    }
+    catch(err){
+        dispatch(deleteUserFailure());
+    }
+};
+
+export const addUser = async (dispatch) => {
+    dispatch(addUserStart());
+    try{
+        const res = await publicRequest.post('/users');
+        dispatch(addUserSuccess(res.data));
+    }
+    catch(err){
+        dispatch(addUserFailure());
     }
 };
