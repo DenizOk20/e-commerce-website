@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './Register.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { register } from '../../redux/apiCalls'
-import { registerSuccess } from '../../redux/registerRedux'
+import { registerSuccess } from '../../redux/userRedux'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
@@ -19,27 +19,24 @@ const Register = () => {
     
       const handleClick = async (e) => {
         e.preventDefault();
-        try {
-          await register(dispatch,inputs); 
-          if (registerSuccess()) {
-            // navigate('/');
-          }
-        } catch (err) {
-          console.log(err);
+        const user = {...inputs};
+        register(dispatch,user);
+        if(registerSuccess){
+            navigate('/login')
         }
-      };
+};
 
     return(
         <div className='register-container'>
             <div className='register-section'>
                 <h1 className='register-title'>Create An Account</h1>
                 <form className='info-form'>
-                    <input type="text" placeholder="Name" onChange={handleChange} />
-                    <input type="text" placeholder="Last Name" onChange={handleChange}/>
-                    <input type="text" placeholder="User Name" onChange={handleChange}/>
-                    <input type="email" placeholder="e-mail" onChange={handleChange}/>
-                    <input type="password" placeholder="Password" onChange={handleChange}/>
-                    <input type="password" placeholder="Confirm Password" onChange={handleChange}/>
+                    <input name='name' type="text" placeholder="Name" onChange={handleChange} />
+                    <input name='lastName' type="text" placeholder="Last Name" onChange={handleChange}/>
+                    <input name='username' type="text" placeholder="User Name" onChange={handleChange}/>
+                    <input name='email' type="email" placeholder="e-mail" onChange={handleChange}/>
+                    <input name='password' type="password" placeholder="Password" onChange={handleChange}/>
+                    <input name='confirmPassword' type="password" placeholder="Confirm Password" onChange={handleChange}/>
                 </form>
                 <span className='register-desc'>By creating an acoount, I consent to the processing of my personal data in accordance with the
                      Privacy Policy

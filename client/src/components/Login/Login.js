@@ -14,12 +14,13 @@ const Login = () => {
     const navigate = useNavigate()
     const handleClick = (e) => {
         e.preventDefault();
-        login(dispatch, {username,password})
+        login(dispatch,{username,password})
+        console.log({username,password})
         if(loginSuccess()){
             navigate('/')
         }
         else{
-            navigate('/register')
+            navigate('/login')
         }
     }
 
