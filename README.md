@@ -6,12 +6,12 @@
 - Log out
 - choose product
 - Add to shop cart
-- Pay of your products
+- Pay for your products
 
 --- 
 
 ### I used;
-- React Redux toolkit
+- React Redux Toolkit
 - MongoDB
 - Rest API
 - Stripe Payment Checkout
