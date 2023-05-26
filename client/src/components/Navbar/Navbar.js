@@ -4,11 +4,9 @@ import {faSearch, faShoppingBag} from "@fortawesome/free-solid-svg-icons"
 import './Navbar.css'
 import {useDispatch, useSelector} from 'react-redux'
 import { loginSuccess, logout, logoutSuccess } from "../../redux/userRedux";
-import { Logout } from "../../redux/apiCalls";
 
 const Navbar = () => {
     const quantity = useSelector(state => state.cart.quantity)
-    console.log(quantity)
     const dispatch = useDispatch();
     const currentUser = useSelector(state => state.user.currentUser);
     const handleClick = (e) => {

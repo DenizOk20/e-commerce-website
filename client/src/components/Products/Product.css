@@ -4,6 +4,7 @@
     height: 50vh;
     min-width: 20%;
     position: relative;
+    max-width: 350px;
 }
 
 .product-img{

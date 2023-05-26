@@ -3,23 +3,28 @@ import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAdd, faMinus } from '@fortawesome/free-solid-svg-icons'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout'
 import { useEffect, useState } from 'react'
 import {userRequest} from '../../requestMethods'
 import { useNavigate } from 'react-router-dom'
+import { addProduct, updateProduct } from "../../redux/cartRedux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const [stripeToken,setStripeToken] = useState(null);
+    const [quantity,setQuantitiy] = useState(cart.products.map(i => i.quantity))
     const history = useNavigate();
-
     const onToken = (token) => {
             setStripeToken(token);
     }
-    
+    const dispacth = useDispatch();
+
+    console.log(cart.products.map(i => (
+        i.quantity
+    )));
     useEffect(() => {
         const makeRequest = async () => {
             try{
@@ -64,9 +69,9 @@ const Cart = () => {
                             </div>
                             <div className='price-detail'>
                                 <div className='price-amount-detail'>
-                                    <FontAwesomeIcon icon={faMinus}/>
+                                    <FontAwesomeIcon onClick={() => product.quantity >1 && setQuantitiy(product.quantity-=1)} icon={faMinus}/>
                                     <span className='product-count'>{product.quantity}</span>
-                                    <FontAwesomeIcon icon={faAdd}/>
+                                    <FontAwesomeIcon onClick={() => setQuantitiy(product.quantity+=1)} icon={faAdd}/>
                                 </div>
                                 <div className='cart-price-section'><b>Price: </b>$ {product.price * product.quantity}</div>
                             </div>
@@ -75,7 +80,7 @@ const Cart = () => {
                     </div>
                     ))}
                     </div>
-                    <div className='cart-summary'>
+                        <div className='cart-summary'>
                         <h1 className='summary-title'>ORDER SUMMARY</h1>
                         <div className='summary-info'>
                             <h1>Subtotal</h1>
@@ -103,7 +108,7 @@ const Cart = () => {
                                 token={onToken}
                                 stripeKey={KEY}
                                 >
-                                <button>CHECKOUT NOW</button>
+                                <button className='checkout-button'>CHECKOUT NOW</button>
                         </StripeCheckout>
                     </div>
                 </div>

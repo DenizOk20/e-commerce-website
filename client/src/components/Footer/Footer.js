@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Footer.css'
 import { faCcDiscover, faCcMastercard, faCcPaypal, faCcVisa, faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faLocation, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { useSelector } from 'react-redux'
 
 const Footer = () => {
+    const currentUser = useSelector(state => state.user.currentUser);
     return(
         <div className='footer-container'>
             <div className='footer'>
@@ -22,10 +24,13 @@ const Footer = () => {
                 <div className='center'>
                     <h3 className='site-links'>Useful Links</h3>
                     <ul className='links'>
-                        <li className='link'><a href='/'>About us</a></li>
+                        <li className='link'><a href='/about'>About us</a></li>
                         <li className='link'><a href='/'>Home</a></li>
                         <li className='link'><a href='/register'>Register</a></li>
-                        <li className='link'><a href='/login'>Login</a></li>
+                        {currentUser === null
+                            ? (<li className='link'><a href='/login'>Login</a></li> )
+                            : (<li className='link'><a href='/'>Login</a></li> )
+                        }
                         <li className='link'><a href='/'>Categories</a></li>
                     </ul>
                 </div>

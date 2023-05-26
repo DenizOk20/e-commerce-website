@@ -84,11 +84,12 @@ hr{
     justify-content: space-around;
     padding: 20px;
 }
-/* .cart-color-detail{
+.cart-color-detail{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-} */
+    border: groove;
+}
 
 .price-detail{
     flex: 1;

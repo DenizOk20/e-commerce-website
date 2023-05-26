@@ -3,10 +3,10 @@ import './Login.css'
 import { useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { Logout, login } from '../../redux/apiCalls'
-import { loginSuccess } from '../../redux/userRedux'
+import { loginFailure, loginSuccess } from '../../redux/userRedux'
 
 const Login = () => {
-
+    const currentUser = useSelector(state => state.user.currentUser);
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
     const dispatch = useDispatch();
@@ -15,13 +15,7 @@ const Login = () => {
     const handleClick = (e) => {
         e.preventDefault();
         login(dispatch,{username,password})
-        console.log({username,password})
-        if(loginSuccess()){
-            navigate('/')
-        }
-        else{
-            navigate('/login')
-        }
+        currentUser === null ?  navigate('/login') : navigate('/');
     }
 
 

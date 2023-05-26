@@ -60,6 +60,7 @@
     padding: 4px;
     margin-left: 4px;
     cursor: pointer;
+    border: groove;
 }
 
 .size-selection-section{
